@@ -14,12 +14,12 @@ int main(int argc, char const *argv[])
     a = 10;
     b = 20;
 
-    printf("Before swap\na=%d, b=%d\n\n", a, b);
+    printf("Before swap\na=%d (adress: %p), b=%d (adress: %p)\n\n", a,&a, b, &b);
 
     // pass the adress of a and b and then the swap function swaps the values stored at those adresses
     swap(&a, &b);
 
-    printf("After swap\na=%d, b=%d\n", a, b);
+    printf("After swap\na=%d (adress: %p), b=%d (adress: %p)\n", a, &a, b, &b);
 
     return 0;
 }
