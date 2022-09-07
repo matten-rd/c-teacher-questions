@@ -1,11 +1,14 @@
 #include <stdio.h>
 
-void printMe(int arr[], int size) // int *arr, int size
+/**
+ * Prints every second value in an array 
+ */
+void printMe(int arr[], int size)
 {
-    // Stops when 
-    for (int *pArr = arr; (pArr - arr) < size; pArr++) 
+    // the stopping criteria works since arr is pointing to the first element in arr and pArr is moved from first to last element
+    for (int *pArr = arr; (pArr - arr) < size; pArr+=2) 
     {
-        printf("age: %d, adress: %p\n", *pArr, pArr);
+        printf("age: %d, adress: %p\n", *pArr, pArr); // pArr is the same as &(*pArr)
     }
 }
 
