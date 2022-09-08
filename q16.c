@@ -4,18 +4,18 @@ typedef struct Time {
     int hours;
     int minutes;
     int seconds;
-} time;
+} Time;
 
-time createTime(int h, int m, int s) 
+Time createTime(int h, int m, int s) 
 {
-    time time;
+    Time time;
     time.hours = h;
     time.minutes = m;
     time.seconds = s;
     return time;
 }
 
-time sumTimes(time t1, time t2) 
+Time sumTimes(Time t1, Time t2)
 {
     int sumSeconds = t1.seconds + t2.seconds;
     int seconds = sumSeconds % 60;
@@ -33,7 +33,7 @@ time sumTimes(time t1, time t2)
 
 int main(int argc, char const *argv[])
 {
-    time t1, t2, tSum;
+    Time t1, t2, tSum;
 
     t1 = createTime(12, 54, 59);
     t2 = createTime(15, 16, 17);
