@@ -6,30 +6,18 @@ typedef struct Time
     int hours;
     int minutes;
     int seconds;
-} time;
+} Time;
 
-time createTime(int h, int m, int s)
+Time createTime(int h, int m, int s)
 {
-    time time;
+    Time time;
     time.hours = h;
     time.minutes = m;
     time.seconds = s;
     return time;
 }
 
-time* createTimeArray(int count) 
-{
-    time *times = malloc(sizeof(*times) * count);
-
-    for (int i = 0; i < count; i++)
-    {
-        times[i] = createTime(i, 12, 12);
-    }
-
-    return times;
-}
-
-void printTimeArray(time *timeArr, int count)
+void printTimeArray(Time *timeArr, int count)
 {
     for (int i = 0; i < count; i++)
     {
@@ -37,20 +25,17 @@ void printTimeArray(time *timeArr, int count)
     }
 }
 
-void destroyTimeArray(time *timeArr)
-{
-    free(timeArr);
-}
-
 int main(int argc, char const *argv[])
 {
     int count = 5;
-    time *pTimes;
-    pTimes = createTimeArray(count);
+    Time times[count];
 
-    printTimeArray(pTimes, count);
+    for (int i = 0; i < count; i++)
+    {
+        times[i] = createTime(i, 12, 12);
+    }
 
-    destroyTimeArray(pTimes);
+    printTimeArray(times, count);
 
     return 0;
 }
