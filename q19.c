@@ -30,4 +30,6 @@ int main()
     struct Vehicle *veh2 = p_vehicle_create(2, 15.5);
     printf("veh1 - address:%p wheels:%d power:%f\n", &veh1, veh1.numberOfWheels, veh1.power);
     printf("veh2 - address:%p wheels:%d power:%f\n", veh2, veh2->numberOfWheels, veh2->power);
+    
+    free(veh2);
 }
