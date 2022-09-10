@@ -17,7 +17,7 @@ struct Vehicle vehicle_create(int w, float p)
 
 struct Vehicle *p_vehicle_create(int w, float p) 
 {
-    struct Vehicle *v = malloc(sizeof(struct Vehicle));
+    struct Vehicle *v = malloc(sizeof(*v));
     v->numberOfWheels = w;
     v->power = p;
     printf("address of v inside 'p_vehicle_create': %p\n", v);
