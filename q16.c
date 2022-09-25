@@ -17,19 +17,18 @@ Time createTime(int h, int m, int s)
 
 Time sumTimes(Time t1, Time t2)
 {
-    int sumSeconds = t1.seconds + t2.seconds;
-    int seconds = sumSeconds % 60;
-    int extraMin = (sumSeconds - seconds) / 60;
+    int sumSeconds = t1.seconds + t2.seconds; // sum of seconds
+    int seconds = sumSeconds % 60; // new number of seconds by calculating the remainder if sumSeconds > 60
+    int extraMin = (sumSeconds - seconds) / 60; // get possible "extra" min if sumSeconds > 60
 
-    int sumMinutes = t1.minutes + t2.minutes + extraMin;
-    int minutes = sumMinutes % 60;
-    int extraHour = (sumMinutes - minutes) / 60;
+    int sumMinutes = t1.minutes + t2.minutes + extraMin; // sum of minutes
+    int minutes = sumMinutes % 60; // new number of minutes by calculating the remainder if sumMinutes > 60
+    int extraHour = (sumMinutes - minutes) / 60; // get possible "extra" hour if sumMinutes > 60
 
-    int hours = t1.hours + t2.hours + extraHour;
+    int hours = t1.hours + t2.hours + extraHour; // new number of hours
 
     return createTime(hours, minutes, seconds);
 }
-
 
 int main(int argc, char const *argv[])
 {
